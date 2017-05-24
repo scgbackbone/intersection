@@ -1,0 +1,48 @@
+If you want to try the simulation you need to set up some GUI variables that allows you to control situation on the intersection
+
+1. Download NetLogo (https://ccl.northwestern.edu/netlogo/download.shtml)
+
+2. set GUI variables as follows(!!!case sensitive!!!):
+
+REQUIRED:
+# buttons:
+    setup
+    go
+    go(forever)
+
+# sliders:
+    frequency-SN-1 (min=0, increment=1, max=100)
+    frequency-SN-2 (min=0, increment=1, max=100)
+    tram-frequency (min=0, increment=1, max=100)
+    frequency-NS-3 (min=0, increment=1, max=100)
+    frequency-NS-2 (min=0, increment=1, max=100)
+    frequency-NS-1 (min=0, increment=1, max=100)
+    frequency-WS (min=0, increment=1, max=100)
+    stadium-turn-intensity (min=0, increment=1, max=100)
+    police-turn-intensity (min=0, increment=1, max=100)
+    frequency-EN (min=0, increment=1, max=100)
+    frequency-ES (min=0, increment=1, max=100)
+
+# switch:
+    manual-traffic-control
+   
+# chooser:
+    light-schema (choices: 1,2,3)
+    
+
+OPTIONAL:
+# monitors:
+    * reporter: count dead     display name: left the intersection  
+    * reporter: count turtles with [ shape = "car" ]     display name: no.cars
+    
+# plot(only one):
+    name: cars count
+    x axis label: ticks
+    y axis label: cars 
+    y min=0, y max=10
+    x min=0, x max=10
+    select auto scale option!!!
+    pen name: default
+    pen update commands: plot count turtles with [ shape = "car" ]
+    
+3. done...
