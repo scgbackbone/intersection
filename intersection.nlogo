@@ -246,34 +246,6 @@ to move-cars
       [ die! ]
       [ ifelse [ pcolor ] of patch-ahead 1 = red [] [ifelse [count turtles-here with [ shape = "car" ]] of patch-ahead 1 != 0 [] [ fd 1 ] ]]
   ]
-
-; how the else statement looked before I figured
-;[ ifelse [pcolor] of patch-ahead 1 = red [] [ ifelse any? carsSN-on patch-ahead 1 or any? carsSE-on patch-ahead 1 or any? carsEN-on patch-ahead 1 or any? carsWS-on patch-ahead 1 or any? carsNS-on patch-ahead 1 or any? carsNE-on patch-ahead 1 or any? carsES-on patch-ahead 1[  ] [ fd 1 ] ] ]
-
-; advice from stack-overflow
-; ask cars [
-;   if patch-ahead 1 != nobody [
-;     if [pcolor] of patch-ahead 1 != red and [ count turtles-here with [ shape = "car"] ] of patch-ahead 1 = 0 [
-;       fd 1
-;     ]
-;   ]
-; ]
-
-;  ask carsSE [
-;    ifelse not can-move? 1
-;      [ die! ]
-;      [ ifelse [pcolor] of patch-ahead 1 = red [] [ ifelse any? cars-on patch-ahead 1 or any? carsSE-on patch-ahead 1 or any? carsEN-on patch-ahead 1 or any? carsWS-on patch-ahead 1 [  ] [ fd 1 ] ] ]
-;  ]
-;  ask carsEN [
-;    ifelse not can-move? 1
-;      [ die! ]
-;      [ ifelse [pcolor] of patch-ahead 1 = red [] [ ifelse any? cars-on patch-ahead 1 or any? carsSE-on patch-ahead 1 or any? carsEN-on patch-ahead 1 or any? carsWS-on patch-ahead 1 [  ] [ fd 1 ] ] ]
-;  ]
-;  ask carsWS [
-;    ifelse not can-move? 1
-;      [ die! ]
-;      [ ifelse [pcolor] of patch-ahead 1 = red [] [ ifelse any? cars-on patch-ahead 1 or any? carsSE-on patch-ahead 1 or any? carsEN-on patch-ahead 1 or any? carsWS-on patch-ahead 1 [  ] [ fd 1 ] ] ]
-;  ]
 end
 
 ;;;;;;;;;;;;;;;;;;;;;;
